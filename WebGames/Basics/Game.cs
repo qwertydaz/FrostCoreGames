@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace WebGames.Basics
 {
-    class Game
-    {
-    }
+	abstract class Game {
+		HashMap<int, Player> playerList = new HashMap;
+		int counter;
+		string inviteCode;
+
+		public string genInvCode();
+		private void addPlayer(string name);
+	}
 }

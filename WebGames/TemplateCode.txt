@@ -1,0 +1,133 @@
+abstract class Player
+	string playerName
+	string playerIP
+
+
+
+class FunnyCardGamePlayer : Player
+	Hand playerHand
+	
+	public FunnyCardGamePlayer(name, ip)
+		string playerName = name
+		string playerIP = ip
+		Hand playerHand = new Hand()
+
+
+class Card
+	string cardContent;
+	CardType cardType
+
+	public Card()
+		string cardContents = ""
+		CardType cardType = white
+		
+
+
+enum CardType
+	white,
+	black
+
+
+class Deck
+	HashMap<cardNum, Card> whiteCards = new Hashmap
+	
+	public Deck()
+		String[] whiteCardsFromTxt = //// READ IN TEXT FILE FOR WHITE CARDS ////
+		for i=0 to whiteCardsFromTxt.length:
+			whiteCards.add(i, whiteCardsFromTxt[i])
+
+	public void addCard(Card[] cards)
+		Card c = whiteCards.get(Random.random(0, whiteCards.size))
+		whiteCards.remove(c)
+		cards.add(c)
+
+	public Card[] dealCards (numOfCards)
+		Card[] newDeck = new Card[numOfCards];
+		for i=0 to numofCards:
+			addCard(newDeck)
+		return newDeck
+
+
+class Hand
+	Card[] cards;
+
+	public Hand()
+		Card[] cards = new Card[];
+
+	public getCards()
+		return cards
+
+
+	private refreshCards()
+		
+
+
+
+class FunnyCardGame : Game
+
+	public Game(int counter)
+		this.counter = counter
+		inviteCode = genInvCode(counter)
+		
+	public string genInvCode()
+		int x = counter // 26^3
+		int y = counter % 26^3 // 26^2
+		int z = a % 26^2 // 26^1
+		int w = b % 26^1
+		Create string from alphabet of xyzw
+
+	private void addPlayer(string name, string ip)
+		Player newPlayer = new Player(name, ip)
+		playerList.add(newPlayer.getID, newPlayer)
+
+
+abstract class Game 
+	HashMap<int, Player> playerList = new HashMap;
+	int counter
+	string inviteCode
+
+	public Game(int counter)
+	public string genInvCode()
+	private void addPlayer(string name)
+
+
+enum GameType
+	FunnyCardGame,
+	PokerGame
+	Chess,
+	HyperbolicTimeChamberPOV
+
+
+
+//// SERVER ////
+
+static HashMap<string, int> numbet = new HashMap // OR DICTIONARY Alphabet->NUM
+static HashMap<int, string> alphabet = new HashMap // OR DICTIONARY NUM->Alphabet
+int counter = random(0,400000);
+HashMap<int, Game> gamesList = (counters...)
+
+	input(host or join)
+		if (host)
+			if counter >= 456976:  /// it works i priomise
+				counter = 0 
+
+			switch(gametype)
+
+			case(FunnyCardGame):
+				gameList.add(counter++, new FunnyCardGame(counter++, ip))
+			
+		else if (join)
+			int invCode = demist(inviteCode)
+			//// sanitize inviteCode from 5 numbers ////
+			if correct:
+				gamesList.get(inviteCode).addPlayer(input name)
+
+
+
+	static demist(int invCode)
+		Create array of nums from reverse alphabet
+		int total = arr[3] * 26^3
+		total += arr[2] * 26^2
+		total += arr[1] * 26^1
+		total += arr[0] 
+		return total

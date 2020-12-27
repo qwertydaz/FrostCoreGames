@@ -48,8 +48,6 @@
   <ItemGroup>
     <Content Include="TemplateCode.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FunnyCardGame\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

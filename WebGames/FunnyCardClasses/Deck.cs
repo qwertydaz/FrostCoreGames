@@ -47,6 +47,7 @@ namespace WebGames.FunnyCardClasses
 			for (int i = 0; i < numOfCards; i++) { addCard(newHand); }
 			return newHand;
 		}
+		int test;
 	}
 	
 }

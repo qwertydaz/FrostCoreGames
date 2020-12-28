@@ -8,8 +8,9 @@ namespace WebGames.FunnyCardClasses
 {
 	class Deck
     {
+		int cardNum;
 		// TODO: Replace with ditt
-		HashMap<cardNum, Card> whiteCards = new Hashmap;
+		Dictionary<int, Card> whiteCards = new Dictionary<int, Card>();
 		Random rand = new Random();
 
 		/* Constructor for Deck which accepts no params */
@@ -19,7 +20,7 @@ namespace WebGames.FunnyCardClasses
 			string[] whiteCardsFromTxt = string[];//// READ IN TEXT FILE FOR WHITE CARDS ////
 			for (int i=0; i<whiteCardsFromTxt.Length; i++)
 			{
-				whiteCards.add(i, whiteCardsFromTxt[i]);
+				whiteCards.Add(i, whiteCardsFromTxt[i]);
 			}
 		}
 
@@ -30,9 +31,9 @@ namespace WebGames.FunnyCardClasses
 
 		public Card[] addCard(Card[] cards)
 		{
-			Card c = whiteCards.get(rand.Next(0, whiteCards.size));
-			whiteCards.remove(c);
-			cards.add(c);
+			Card c = whiteCards.Get(rand.Next(0, whiteCards.Size));
+			whiteCards.Remove(c);
+			cards.Add(c);
 			return cards;
 		}
 

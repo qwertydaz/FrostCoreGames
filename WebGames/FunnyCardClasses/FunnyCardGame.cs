@@ -10,15 +10,18 @@ namespace WebGames.FunnyCardClasses
     class FunnyCardGame : Game
     {
 		int counter;
+		int round;
+		string inviteCode;
 		Dictionary<int, FunnyCardGamePlayer> playerDict = new Dictionary<int, FunnyCardGamePlayer>();
+
 		public FunnyCardGame(int counter)
 		{
 			this.counter = counter;
-			string inviteCode = genInvCode(counter);
+			this.round = 0;
+			this.inviteCode = genInvCode(counter);
 		}
 
-		override
-		public string genInvCode(int counter)
+		public override string genInvCode(int counter)
 		{
 			int x = counter / 26 ^ 3;
 			int y = counter % 26 ^ 3 / 26 ^ 2;
@@ -28,11 +31,22 @@ namespace WebGames.FunnyCardClasses
 			return x.ToString() + y.ToString() + z.ToString() + w.ToString();
 		}
 
-		override
-		public void addPlayer(string name, string ip)
+		
+		public override void addPlayer(string name, string ip)
 		{
 			FunnyCardGamePlayer newPlayer = new FunnyCardGamePlayer(name, ip);
-			this.playerDict.Add(newPlayer.getID, newPlayer);
+			this.playerDict.Add(newPlayer.getID(), newPlayer);
 		}
+
+		public void nextRound()
+        {
+			this.round++;
+			foreach (FunnyCardGamePlayer p in this.playerDict.Values)
+            {
+				// Addcard to player hand .... other shit
+            }
+        }
+
+
 	}
 }

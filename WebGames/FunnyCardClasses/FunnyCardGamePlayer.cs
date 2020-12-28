@@ -26,7 +26,9 @@ namespace WebGames.FunnyCardClasses
 
 		private int generateID(string name, string ip)
         {
-			// TODO: Generate playerID
+			/* TODO: Generate playerID / Can't do until server written in C# 
+			/			and the format of IP isn't known */
+			
         }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Basics\Game.cs" />
     <Compile Include="Basics\Player.cs" />
+    <Compile Include="FunnyCardClasses\Card.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace WebGames.FunnyCardClasses
 {
-    class Class1
-    {
-    }
+	class Card
+	{
+		string cardContents;
+		CardType cardType;
+
+		public Card()
+		{
+			this.cardContents = "";
+			this.cardType = 0;
+		}
+	}
+	enum CardType
+	{
+		white,
+		black
+	}
 }

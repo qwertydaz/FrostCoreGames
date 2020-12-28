@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WebGames.Basics;
+
+namespace WebGames.FunnyCardClasses
+{
+    class FunnyCardGame : Game
+    {
+		int counter;
+		public FunnyCardGame(int counter)
+		{
+			this.counter = counter;
+			string inviteCode = genInvCode(counter);
+		}
+
+
+		public string genInvCode(int counter)
+		{
+			int x = counter / 26 ^ 3;
+			int y = counter % 26 ^ 3 / 26 ^ 2;
+			int z = counter % 26 ^ 2 / 26 ^ 1;
+			int w = counter % 26 ^ 1;
+			//Create string from alphabet of xyzw
+			return x.ToString() + y.ToString() + z.ToString() + w.ToString();
+		}
+
+		private void addPlayer(string name, string ip)
+		{
+			Player newPlayer = new FunnyCardGamePlayer(name, ip);
+			playerList.add(newPlayer.getID, newPlayer);
+		}
+	}
+}

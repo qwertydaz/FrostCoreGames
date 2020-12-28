@@ -16,10 +16,10 @@ namespace WebGames.FunnyCardClasses
 		public Deck()
 		{
 			// TODO: Correct xls input to dict
-			string[] whiteCardsFromTxt = string[];//// READ IN TEXT FILE FOR WHITE CARDS ////
+			string[] whiteCardsFromTxt = new string[];//// READ IN TEXT FILE FOR WHITE CARDS ////
 			for (int i=0; i<whiteCardsFromTxt.Length; i++)
 			{
-				whiteCards.Add(i, whiteCardsFromTxt[i]);
+				whiteCards.Add(i, new Card(whiteCardsFromTxt[i], 0));
 			}
 		}
 
@@ -30,8 +30,8 @@ namespace WebGames.FunnyCardClasses
 
 		public static Card[] addCard(Card[] cards)
 		{
-			Card c = whiteCards[rand.Next(0, whiteCards.Size)];
-			whiteCards.Remove(c);
+			Card c = whiteCards[rand.Next(0, whiteCards.Count() - 1)];
+			whiteCards.Remove(c.Key);
 			cards.Add(c);
 			return cards;
 		}

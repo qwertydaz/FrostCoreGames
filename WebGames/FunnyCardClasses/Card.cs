@@ -16,6 +16,12 @@ namespace WebGames.FunnyCardClasses
 			this.cardContents = "";
 			this.cardType = 0;
 		}
+
+		public Card(string contents, CardType type)
+        {
+			this.cardContents = contents;
+			this.cardType = type;
+		}
 	}
 	enum CardType
 	{

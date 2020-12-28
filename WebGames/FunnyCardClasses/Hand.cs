@@ -8,15 +8,15 @@ namespace WebGames.FunnyCardClasses
 {
     class Hand
     {
-		Card[] cards;
+		List<Card> cards;
 		public Hand()
 		{
-			Card[] cards = new Card[10];
+			this.cards = new List<Card>();
 		}
 
-		public Card[] getCards()
+		public List<Card> getCards()
 		{
-			return cards;
+			return this.cards;
 		}
 
 		private void refreshCards()

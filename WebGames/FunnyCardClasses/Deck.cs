@@ -8,7 +8,6 @@ namespace WebGames.FunnyCardClasses
 {
 	class Deck
     {
-		// TODO: Replace with ditt
 		static Dictionary<int, Card> whiteCards = new Dictionary<int, Card>();
 		static Random rand = new Random();
 
@@ -19,7 +18,7 @@ namespace WebGames.FunnyCardClasses
 			string[] whiteCardsFromTxt = new string[];//// READ IN TEXT FILE FOR WHITE CARDS ////
 			for (int i=0; i<whiteCardsFromTxt.Length; i++)
 			{
-				whiteCards.Add(i, new Card(whiteCardsFromTxt[i], 0));
+                whiteCards.Add(i, new Card(whiteCardsFromTxt[i], 0));
 			}
 		}
 
@@ -28,10 +27,11 @@ namespace WebGames.FunnyCardClasses
 		 *				  which to add a card to and return.
 		 */
 
-		public static Card[] addCard(Card[] cards)
+		public static List<Card> addCard(List<Card> cards)
 		{
-			Card c = whiteCards[rand.Next(0, whiteCards.Count() - 1)];
-			whiteCards.Remove(c.Key);
+			int key = rand.Next(0, whiteCards.Count() - 1);
+			Card c = whiteCards[key];
+			whiteCards.Remove(key);
 			cards.Add(c);
 			return cards;
 		}
@@ -41,13 +41,13 @@ namespace WebGames.FunnyCardClasses
 		 *					Card[] to return to the user filled
 		 *					with numOfCard amount of new cards.
 		 */
-		public static Card[] dealCards(int numOfCards)
+		public static List<Card> dealCards(int numOfCards)
 		{
-			Card[] newHand = new Card[numOfCards];
+			List<Card> newHand = new List<Card>();
 			for (int i = 0; i < numOfCards; i++) { addCard(newHand); }
 			return newHand;
 		}
-		int test;
+
 	}
 	
 }

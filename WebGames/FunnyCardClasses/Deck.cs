@@ -8,7 +8,6 @@ namespace WebGames.FunnyCardClasses
 {
 	class Deck
     {
-		int cardNum;
 		// TODO: Replace with ditt
 		Dictionary<int, Card> whiteCards = new Dictionary<int, Card>();
 		Random rand = new Random();

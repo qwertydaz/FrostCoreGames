@@ -31,6 +31,7 @@ namespace WebGames.FunnyCardClasses
 		{
 			Player newPlayer = new FunnyCardGamePlayer(name, ip);
 			playerList.add(newPlayer.getID, newPlayer);
+			int test;
 		}
 	}
 }

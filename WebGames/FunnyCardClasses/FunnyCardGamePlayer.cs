@@ -9,13 +9,24 @@ namespace WebGames.FunnyCardClasses
 {
 	class FunnyCardGamePlayer : Player
 	{
-		Hand playerHand;
+		Hand playerHand; 
+		string playerName;
+		string playerIP;
+		int playerID;
 
 		public FunnyCardGamePlayer(string name, string ip)
 		{
-			string playerName = name;
-			string playerIP = ip;
+			this.playerName = name;
+			this.playerIP = ip;
+			this.playerID = generateID(playerName, playerIP);
 			Hand playerHand = new Hand();
 		}
-	}
+
+        public override int getID() { return this.playerID; }
+
+		private int generateID(string name, string ip)
+        {
+			// TODO: Generate playerID
+        }
+    }
 }

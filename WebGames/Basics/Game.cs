@@ -12,7 +12,7 @@ namespace WebGames.Basics
 		int counter;
 		string inviteCode;
 
-		public abstract string genInvCode();
-		public abstract void addPlayer(string name);
+		public abstract string genInvCode(int counter);
+		public abstract void addPlayer(string name, string ip);
 	}
 }

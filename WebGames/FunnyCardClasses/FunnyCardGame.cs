@@ -10,13 +10,14 @@ namespace WebGames.FunnyCardClasses
     class FunnyCardGame : Game
     {
 		int counter;
+		Dictionary<int, FunnyCardGamePlayer> playerDict = new Dictionary<int, FunnyCardGamePlayer>();
 		public FunnyCardGame(int counter)
 		{
 			this.counter = counter;
 			string inviteCode = genInvCode(counter);
 		}
 
-
+		override
 		public string genInvCode(int counter)
 		{
 			int x = counter / 26 ^ 3;
@@ -27,11 +28,11 @@ namespace WebGames.FunnyCardClasses
 			return x.ToString() + y.ToString() + z.ToString() + w.ToString();
 		}
 
-		private void addPlayer(string name, string ip)
+		override
+		public void addPlayer(string name, string ip)
 		{
-			Player newPlayer = new FunnyCardGamePlayer(name, ip);
-			playerList.add(newPlayer.getID, newPlayer);
-			int test;
+			FunnyCardGamePlayer newPlayer = new FunnyCardGamePlayer(name, ip);
+			this.playerDict.Add(newPlayer.getID, newPlayer);
 		}
 	}
 }

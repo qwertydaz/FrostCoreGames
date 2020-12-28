@@ -10,5 +10,9 @@ namespace WebGames.Basics
     {
         string playerName;
         string playerIP;
+        int playerID;
+
+        public abstract int getID();
+
     }
 }
